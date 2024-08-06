@@ -69,8 +69,8 @@ goamdsmi_status_t go_shim_rsmi_shutdown()
 
 goamdsmi_status_t go_shim_rsmi_num_monitor_devices(uint32_t* gpu_num_monitor_devices)
 {
-    *gpu_num_monitor_devices              = 0;
-    uint32_t gpu_num_monitor_devices_temp = 0;
+    *gpu_num_monitor_devices              = GOAMDSMI_UINT32_MAX;
+    uint32_t gpu_num_monitor_devices_temp = GOAMDSMI_UINT32_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_num_monitor_devices(&gpu_num_monitor_devices_temp))
     {
@@ -102,8 +102,8 @@ goamdsmi_status_t go_shim_rsmi_dev_name_get(uint32_t dv_ind, char** gpu_dev_name
 
 goamdsmi_status_t go_shim_rsmi_dev_id_get(uint32_t dv_ind, uint16_t* gpu_dev_id)
 {
-    *gpu_dev_id              = 0;
-    uint16_t gpu_dev_id_temp = 0;
+    *gpu_dev_id              = GOAMDSMI_UINT16_MAX;
+    uint16_t gpu_dev_id_temp = GOAMDSMI_UINT16_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_id_get(dv_ind, &gpu_dev_id_temp))
     {
@@ -117,8 +117,8 @@ goamdsmi_status_t go_shim_rsmi_dev_id_get(uint32_t dv_ind, uint16_t* gpu_dev_id)
 
 goamdsmi_status_t go_shim_rsmi_dev_pci_id_get(uint32_t dv_ind, uint64_t* gpu_pci_id)
 {
-    *gpu_pci_id              = 0;
-    uint64_t gpu_pci_id_temp = 0;
+    *gpu_pci_id              = GOAMDSMI_UINT64_MAX;
+    uint64_t gpu_pci_id_temp = GOAMDSMI_UINT64_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_pci_id_get(dv_ind, &gpu_pci_id_temp))
     {
@@ -167,8 +167,8 @@ goamdsmi_status_t go_shim_rsmi_dev_vbios_version_get(uint32_t dv_ind, char** vbi
 
 goamdsmi_status_t go_shim_rsmi_dev_power_cap_get(uint32_t dv_ind, uint64_t* gpu_power_cap)
 {
-    *gpu_power_cap              = 0;
-    uint64_t gpu_power_cap_temp = 0;
+    *gpu_power_cap              = GOAMDSMI_UINT64_MAX;
+    uint64_t gpu_power_cap_temp = GOAMDSMI_UINT64_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_power_cap_get(dv_ind, GPU_SENSOR_0, &gpu_power_cap_temp))
     {
@@ -182,8 +182,8 @@ goamdsmi_status_t go_shim_rsmi_dev_power_cap_get(uint32_t dv_ind, uint64_t* gpu_
 
 goamdsmi_status_t go_shim_rsmi_dev_power_get(uint32_t dv_ind, uint64_t* gpu_power)
 {
-    *gpu_power              = 0;
-    uint64_t gpu_power_temp = 0;
+    *gpu_power              = GOAMDSMI_UINT64_MAX;
+    uint64_t gpu_power_temp = GOAMDSMI_UINT64_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_power_ave_get(dv_ind, GPU_SENSOR_0, &gpu_power_temp))
     {
@@ -209,8 +209,8 @@ goamdsmi_status_t go_shim_rsmi_dev_power_get(uint32_t dv_ind, uint64_t* gpu_powe
 
 goamdsmi_status_t go_shim_rsmi_dev_temp_metric_get(uint32_t dv_ind, uint32_t sensor, uint32_t metric, uint64_t* gpu_temperature)
 {
-    *gpu_temperature              = 0;
-    uint64_t gpu_temperature_temp = 0;
+    *gpu_temperature              = GOAMDSMI_UINT64_MAX;
+    uint64_t gpu_temperature_temp = GOAMDSMI_UINT64_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_temp_metric_get(dv_ind, sensor, metric, &gpu_temperature_temp))
     {
@@ -224,8 +224,8 @@ goamdsmi_status_t go_shim_rsmi_dev_temp_metric_get(uint32_t dv_ind, uint32_t sen
 
 goamdsmi_status_t go_shim_rsmi_dev_overdrive_level_get(uint32_t dv_ind, uint32_t* gpu_overdrive_level)
 {
-    *gpu_overdrive_level              = 0;
-    uint32_t gpu_overdrive_level_temp = 0;
+    *gpu_overdrive_level              = GOAMDSMI_UINT32_MAX;
+    uint32_t gpu_overdrive_level_temp = GOAMDSMI_UINT32_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_overdrive_level_get(dv_ind, &gpu_overdrive_level_temp))
     {
@@ -239,8 +239,8 @@ goamdsmi_status_t go_shim_rsmi_dev_overdrive_level_get(uint32_t dv_ind, uint32_t
 
 goamdsmi_status_t go_shim_rsmi_dev_mem_overdrive_level_get(uint32_t dv_ind, uint32_t* gpu_mem_overdrive_level)
 {
-    *gpu_mem_overdrive_level              = 0;
-    uint32_t gpu_mem_overdrive_level_temp = 0;
+    *gpu_mem_overdrive_level              = GOAMDSMI_UINT32_MAX;
+    uint32_t gpu_mem_overdrive_level_temp = GOAMDSMI_UINT32_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_mem_overdrive_level_get(dv_ind, &gpu_mem_overdrive_level_temp))
     {
@@ -254,8 +254,8 @@ goamdsmi_status_t go_shim_rsmi_dev_mem_overdrive_level_get(uint32_t dv_ind, uint
 
 goamdsmi_status_t go_shim_rsmi_dev_perf_level_get(uint32_t dv_ind, uint32_t *gpu_perf)
 {
-    *gpu_perf                  = 0;
-    rsmi_dev_perf_level_t perf = 0;
+    *gpu_perf                  = GOAMDSMI_UINT32_MAX;
+    rsmi_dev_perf_level_t perf = GOAMDSMI_UINT32_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_perf_level_get(dv_ind, &perf))
     {
@@ -269,7 +269,7 @@ goamdsmi_status_t go_shim_rsmi_dev_perf_level_get(uint32_t dv_ind, uint32_t *gpu
 
 goamdsmi_status_t go_shim_rsmi_dev_gpu_clk_freq_get_sclk(uint32_t dv_ind, uint64_t* gpu_sclk_freq)
 {
-    *gpu_sclk_freq           = 0;
+    *gpu_sclk_freq           = GOAMDSMI_UINT64_MAX;
     rsmi_frequencies_t freq  = {0};
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_gpu_clk_freq_get(dv_ind, RSMI_CLK_TYPE_SYS, &freq))
@@ -284,7 +284,7 @@ goamdsmi_status_t go_shim_rsmi_dev_gpu_clk_freq_get_sclk(uint32_t dv_ind, uint64
 
 goamdsmi_status_t go_shim_rsmi_dev_gpu_clk_freq_get_mclk(uint32_t dv_ind, uint64_t* gpu_memclk_freq)
 {
-    *gpu_memclk_freq        = 0;
+    *gpu_memclk_freq        = GOAMDSMI_UINT64_MAX;
     rsmi_frequencies_t freq = {0};
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_gpu_clk_freq_get(dv_ind, RSMI_CLK_TYPE_MEM, &freq))
@@ -299,7 +299,7 @@ goamdsmi_status_t go_shim_rsmi_dev_gpu_clk_freq_get_mclk(uint32_t dv_ind, uint64
 
 goamdsmi_status_t go_shim_rsmi_od_volt_freq_range_min_get_sclk(uint32_t dv_ind, uint64_t* gpu_min_sclk)
 {
-    *gpu_min_sclk            = 0;
+    *gpu_min_sclk            = GOAMDSMI_UINT64_MAX;
     rsmi_od_volt_freq_data_t odv;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_od_volt_info_get(dv_ind, &odv))
@@ -314,7 +314,7 @@ goamdsmi_status_t go_shim_rsmi_od_volt_freq_range_min_get_sclk(uint32_t dv_ind, 
 
 goamdsmi_status_t go_shim_rsmi_od_volt_freq_range_min_get_mclk(uint32_t dv_ind, uint64_t* gpu_min_memclk)
 {
-    *gpu_min_memclk            = 0;
+    *gpu_min_memclk            = GOAMDSMI_UINT64_MAX;
     rsmi_od_volt_freq_data_t odv;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_od_volt_info_get(dv_ind, &odv))
@@ -329,7 +329,7 @@ goamdsmi_status_t go_shim_rsmi_od_volt_freq_range_min_get_mclk(uint32_t dv_ind, 
 
 goamdsmi_status_t go_shim_rsmi_od_volt_freq_range_max_get_sclk(uint32_t dv_ind, uint64_t* gpu_max_sclk)
 {
-    *gpu_max_sclk            = 0;
+    *gpu_max_sclk            = GOAMDSMI_UINT64_MAX;
     rsmi_od_volt_freq_data_t odv;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_od_volt_info_get(dv_ind, &odv))
@@ -344,7 +344,7 @@ goamdsmi_status_t go_shim_rsmi_od_volt_freq_range_max_get_sclk(uint32_t dv_ind, 
 
 goamdsmi_status_t go_shim_rsmi_od_volt_freq_range_max_get_mclk(uint32_t dv_ind, uint64_t* gpu_max_memclk)
 {
-    *gpu_max_memclk            = 0;
+    *gpu_max_memclk            = GOAMDSMI_UINT64_MAX;
     rsmi_od_volt_freq_data_t odv;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_od_volt_info_get(dv_ind, &odv))
@@ -359,8 +359,8 @@ goamdsmi_status_t go_shim_rsmi_od_volt_freq_range_max_get_mclk(uint32_t dv_ind, 
 
 goamdsmi_status_t go_shim_rsmi_dev_gpu_busy_percent_get(uint32_t dv_ind, uint32_t* gpu_busy_percent)
 {
-    *gpu_busy_percent              = 0;
-    uint32_t gpu_busy_percent_temp = 0;
+    *gpu_busy_percent              = GOAMDSMI_UINT32_MAX;
+    uint32_t gpu_busy_percent_temp = GOAMDSMI_UINT32_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_busy_percent_get(dv_ind, &gpu_busy_percent_temp))
     {
@@ -374,9 +374,9 @@ goamdsmi_status_t go_shim_rsmi_dev_gpu_busy_percent_get(uint32_t dv_ind, uint32_
 
 goamdsmi_status_t go_shim_rsmi_dev_gpu_memory_busy_percent_get(uint32_t dv_ind, uint64_t* gpu_memory_busy_percent)
 {
-    *gpu_memory_busy_percent        = 0;
-     uint64_t gpu_memory_usage_temp = 0;
-     uint64_t gpu_memory_total_temp = 0;
+    *gpu_memory_busy_percent        = GOAMDSMI_UINT64_MAX;
+     uint64_t gpu_memory_usage_temp = GOAMDSMI_UINT64_MAX;
+     uint64_t gpu_memory_total_temp = GOAMDSMI_UINT64_MAX;
 
     if( (RSMI_STATUS_SUCCESS == rsmi_dev_memory_usage_get(dv_ind, RSMI_MEM_TYPE_VRAM, &gpu_memory_usage_temp))&&
         (RSMI_STATUS_SUCCESS == rsmi_dev_memory_total_get(dv_ind, RSMI_MEM_TYPE_VRAM, &gpu_memory_total_temp)))
@@ -391,8 +391,8 @@ goamdsmi_status_t go_shim_rsmi_dev_gpu_memory_busy_percent_get(uint32_t dv_ind, 
 
 goamdsmi_status_t go_shim_rsmi_dev_gpu_memory_usage_get(uint32_t dv_ind, uint64_t* gpu_memory_usage)
 {
-    *gpu_memory_usage              = 0;
-    uint64_t gpu_memory_usage_temp = 0;
+    *gpu_memory_usage              = GOAMDSMI_UINT64_MAX;
+    uint64_t gpu_memory_usage_temp = GOAMDSMI_UINT64_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_memory_usage_get(dv_ind, RSMI_MEM_TYPE_VRAM, &gpu_memory_usage_temp))
     {
@@ -406,8 +406,8 @@ goamdsmi_status_t go_shim_rsmi_dev_gpu_memory_usage_get(uint32_t dv_ind, uint64_
 
 goamdsmi_status_t go_shim_rsmi_dev_gpu_memory_total_get(uint32_t dv_ind, uint64_t* gpu_memory_total)
 {
-    *gpu_memory_total              = 0;
-    uint64_t gpu_memory_total_temp = 0;
+    *gpu_memory_total              = GOAMDSMI_UINT64_MAX;
+    uint64_t gpu_memory_total_temp = GOAMDSMI_UINT64_MAX;
 
     if(RSMI_STATUS_SUCCESS == rsmi_dev_memory_total_get(dv_ind, RSMI_MEM_TYPE_VRAM, &gpu_memory_total_temp))
     {

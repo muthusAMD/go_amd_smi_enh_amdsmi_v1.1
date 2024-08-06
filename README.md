@@ -95,7 +95,7 @@ The built library will appear in the `build` folder.
 #### ```# The above command will pick default -DWITH_ESMI=OFF -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON```
 #### ```(or)```
 #### ```$ cmake -C ../amd_smi.cmake ../```
-#### ```# The '-C' option will pick default -DWITH_ESMI=ON -DWITH_ROCM_SMI=ON -DWITH_AMDSMI=ON```
+#### ```# The '-C' option will pick default -DWITH_ESMI=OFF -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON```
 #### ```(or)```
 #### ```$ cmake -DWITH_ESMI=ON  -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=OFF ../amd_smi.cmake ../```
 #### ```$ cmake -DWITH_ESMI=OFF -DWITH_ROCM_SMI=ON  -DWITH_AMDSMI=OFF ../amd_smi.cmake ../```

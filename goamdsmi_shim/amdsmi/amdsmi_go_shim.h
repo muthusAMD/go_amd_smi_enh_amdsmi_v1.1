@@ -199,7 +199,7 @@ goamdsmi_status_t go_shim_amdsmigpu_shutdown();
 /**
  *  @brief Go language stub to get the number of GPU devices
  *
- *  @details This function will call the rsmi_num_monitor_devices()
+ *  @details 
  *  function to return the number of GPU devices to be monitored.
  *  This value is then passed as a uint val to the Go routine that
  *  called it.
@@ -215,7 +215,7 @@ goamdsmi_status_t go_shim_amdsmigpu_num_monitor_devices(uint32_t* gpu_num_monito
 /**
  *  @brief Go language stub to get the gpu device name string
  *
- *  @details This function will call the rsmi_dev_name_get()
+ *  @details 
  *  function to write the gpu device name string (up to len characters)
  *  for device dv_ind and return a char pointer. This value is then
  *  passed as char * to the Go routine that called it. The caller of this
@@ -233,7 +233,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_name_get(uint32_t dv_ind, char** gpu_dev
 /**
  *  @brief Go language stub to get the GPU device id
  *
- *  @details This function will call the rsmi_dev_id_get()
+ *  @details This function will call the amdsmi_get_gpu_id()
  *  function to return the GPU device id. This value is then
  *  passed as a uint16_t val to the Go routine that
  *  called it.
@@ -250,7 +250,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_id_get(uint32_t dv_ind, uint16_t* gpu_de
 /**
  *  @brief Go language stub to get the GPU unique pci id
  *
- *  @details This function will call the rsmi_dev_pci_id_get()
+ *  @details 
  *  function to return the unique PCI device identifier
  *  associated for a device. This value is then passed as
  *  a uint64_t val to the Go routine that called it.
@@ -267,7 +267,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_pci_id_get(uint32_t dv_ind, uint64_t* gp
 /**
  *  @brief Go language stub to get the VBIOS identifier string
  *
- *  @details This function will call the rsmi_dev_vbios_ver_get()
+ *  @details 
  *  function to write the VBIOS char array (up to len characters)
  *  for device dv_ind and return a char pointer. This value is then
  *  passed as char pointer to the Go routine that called it. The caller
@@ -286,7 +286,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_vbios_version_get(uint32_t dv_ind, char*
 /**
  *  @brief Go language stub to get the vendor
  *
- *  @details This function will call the rsmi_dev_vendor_name_get()
+ *  @details 
  *  function to write the name of the vendor char array (up to len
  *  characters) for a device dv_ind and return a char pointer. This
  *  value is then passed as a char pointer to the Go routine that
@@ -305,7 +305,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_vendor_name_get(uint32_t dv_ind, char** 
 /**
  *  @brief Go language stub to get the GPU power cap
  *
- *  @details This function will call the rsmi_dev_power_cap_get()
+ *  @details This function will call the amdsmi_get_power_cap_info()
  *  function to return the gpu power cap. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
@@ -322,7 +322,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_power_cap_get(uint32_t dv_ind, uint64_t*
 /**
  *  @brief Go language stub to get the GPU power
  *
- *  @details This function will call the rsmi_dev_power_get()
+ *  @details This function will call the amdsmi_get_power_info() and amdsmi_get_gpu_metrics_info()
  *  function to return the gpu power. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
@@ -339,7 +339,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_power_get(uint32_t dv_ind, uint64_t* gpu
 /**
  *  @brief Go language stub to get the GPU current temperature
  *
- *  @details This function will call the rsmi_dev_temp_metric_get()
+ *  @details This function will call the amdsmi_get_temp_metric()
  *  function to return the gpu current temperature. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
@@ -356,7 +356,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_temp_metric_get(uint32_t dv_ind, uint32_
 /**
  *  @brief Go language stub to get the overdrive level of the device
  *
- *  @details This function will call the rsmi_dev_overdrive_level_get()
+ *  @details 
  *  function to return the overdrive percentage. This value is then
  *  passed as a uint32_t val to the Go routine that
  *  called it.
@@ -373,7 +373,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_overdrive_level_get(uint32_t dv_ind, uin
 /**
  *  @brief Go language stub to get the memory overdrive level of the device
  *
- *  @details This function will call the rsmi_dev_mem_overdrive_level_get()
+ *  @details 
  *  function to return the memory overdrive percentage. This value is then
  *  passed as a uint32_t val to the Go routine that
  *  called it.
@@ -390,7 +390,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_mem_overdrive_level_get(uint32_t dv_ind,
 /**
  *  @brief Go language stub to get the performance level of the device
  *
- *  @details This function will call the rsmi_dev_perf_level_get()
+ *  @details 
  *  function to return the  rsmi_dev_perf_level_t. This value is then
  *  passed as a uint32_t val to the Go routine that
  *  called it.
@@ -407,7 +407,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_perf_level_get(uint32_t dv_ind, uint32_t
 /**
  *  @brief Go language stub to get the GPU SCLK limit
  *
- *  @details This function will call the rsmi_dev_gpu_clk_freq_get()
+ *  @details This function will call the amdsmi_get_clk_freq()
  *  function to return the gpu SCLK Limit. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
@@ -424,7 +424,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_gpu_clk_freq_get_sclk(uint32_t dv_ind, u
 /**
  *  @brief Go language stub to get the GPU MCLK limit
  *
- *  @details This function will call the rsmi_dev_gpu_clk_freq_get()
+ *  @details This function will call the amdsmi_get_clk_freq()
  *  function to return the gpu MCLK Limit. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
@@ -441,7 +441,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_gpu_clk_freq_get_mclk(uint32_t dv_ind, u
 /**
  *  @brief Go language stub to get the minimum supported SCLK frequency
  *
- *  @details This function will call the rsmi_od_volt_freq_data_get()
+ *  @details 
  *  function to return the minium supported SCLK frequency.
  *  This value is then passed as a uint64_t val to the Go routine that
  *  called it.
@@ -458,7 +458,7 @@ goamdsmi_status_t go_shim_amdsmigpu_od_volt_freq_range_min_get_sclk(uint32_t dv_
 /**
  *  @brief Go language stub to get the minimum supported MCLK frequency
  *
- *  @details This function will call the rsmi_od_volt_freq_data_get()
+ *  @details 
  *  function to return the minium supported MCLK frequency.
  *  This value is then passed as a uint64_t val to the Go routine that
  *  called it.
@@ -475,7 +475,7 @@ goamdsmi_status_t go_shim_amdsmigpu_od_volt_freq_range_min_get_mclk(uint32_t dv_
 /**
  *  @brief Go language stub to get the maximum supported SCLK frequency
  *
- *  @details This function will call the rsmi_od_volt_freq_data_get()
+ *  @details 
  *  function to return the maxium supported SCLK frequency.
  *  This value is then passed as a uint64_t val to the Go routine that
  *  called it.
@@ -492,7 +492,7 @@ goamdsmi_status_t go_shim_amdsmigpu_od_volt_freq_range_max_get_sclk(uint32_t dv_
 /**
  *  @brief Go language stub to get the maximum supported MCLK frequency
  *
- *  @details This function will call the rsmi_od_volt_freq_data_get()
+ *  @details 
  *  function to return the maxium supported MCLK frequency.
  *  This value is then passed as a uint64_t val to the Go routine that
  *  called it.
@@ -509,7 +509,7 @@ goamdsmi_status_t go_shim_amdsmigpu_od_volt_freq_range_max_get_mclk(uint32_t dv_
 /**
  *  @brief Go language stub to get the GPU Activity
  *
- *  @details This function will call the rsmi_dev_gpu_activity_get()
+ *  @details This function will call the amdsmi_get_gpu_activity()
  *  function to return the current GPU use. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
@@ -526,7 +526,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_gpu_busy_percent_get(uint32_t dv_ind, ui
 /**
  *  @brief Go language stub to get the GPU Memory Use percent
  *
- *  @details This function will call the rsmi_dev_memory_busy_percent_get()
+ *  @details This function will call the amdsmi_get_gpu_memory_usage() and amdsmi_get_gpu_memory_total()
  *  function to return the current device memory use percent. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
@@ -543,7 +543,7 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_gpu_memory_busy_percent_get(uint32_t dv_
 /**
  *  @brief Go language stub to get the GPU Memory Usage
  *
- *  @details This function will call the rsmi_dev_memory_usage_get()
+ *  @details This function will call the amdsmi_get_gpu_memory_usage()
  *  function to return the amount of memory currently being used. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
@@ -560,12 +560,12 @@ goamdsmi_status_t go_shim_amdsmigpu_dev_gpu_memory_usage_get(uint32_t dv_ind, ui
 /**
  *  @brief Go language stub to get the Total amount of GPU Memory
  *
- *  @details This function will call the rsmi_dev_memory_total_get()
+ *  @details This function will call the amdsmi_get_gpu_memory_total()
  *  function to return the total amount of memory. This value is then
  *  passed as a uint64_t val to the Go routine that
  *  called it.
  *
- *  @param[in] ::uint32_t device index, flag, ptr to rsmi_frequencies_t
+ *  @param[in] ::uint32_t device index
  *  @param[in] ::uint64_t* Total GPU memory
  *
  *  @retval GOAMDSMI_STATUS_SUCCESS is returned upon success.

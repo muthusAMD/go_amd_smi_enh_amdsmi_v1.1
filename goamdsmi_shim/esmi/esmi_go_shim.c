@@ -55,8 +55,8 @@ goamdsmi_status_t go_shim_esmi_init()
 
 goamdsmi_status_t go_shim_esmi_threads_per_core_get(uint32_t* threads_per_core)
 {
-    *threads_per_core              = 0;
-    uint32_t threads_per_core_temp = 0;
+    *threads_per_core              = GOAMDSMI_VALUE_0;
+    uint32_t threads_per_core_temp = GOAMDSMI_VALUE_0;
 
     if(ESMI_SUCCESS == esmi_threads_per_core_get(&threads_per_core_temp))
     {
@@ -70,8 +70,8 @@ goamdsmi_status_t go_shim_esmi_threads_per_core_get(uint32_t* threads_per_core)
 
 goamdsmi_status_t go_shim_esmi_number_of_threads_get(uint32_t* number_of_threads)
 {
-    *number_of_threads                 = 0;
-    uint32_t number_of_threads_temp    = 0;
+    *number_of_threads                 = GOAMDSMI_VALUE_0;
+    uint32_t number_of_threads_temp    = GOAMDSMI_VALUE_0;
 
     if(ESMI_SUCCESS ==  esmi_number_of_cpus_get(&number_of_threads_temp))
     {
@@ -85,8 +85,8 @@ goamdsmi_status_t go_shim_esmi_number_of_threads_get(uint32_t* number_of_threads
 
 goamdsmi_status_t go_shim_esmi_number_of_sockets_get(uint32_t* number_of_sockets)
 {
-    *number_of_sockets              = 0;
-    uint32_t number_of_sockets_temp = 0;
+    *number_of_sockets              = GOAMDSMI_VALUE_0;
+    uint32_t number_of_sockets_temp = GOAMDSMI_VALUE_0;
 
     if (ESMI_SUCCESS == esmi_number_of_sockets_get(&number_of_sockets_temp))
     {
@@ -100,8 +100,8 @@ goamdsmi_status_t go_shim_esmi_number_of_sockets_get(uint32_t* number_of_sockets
 
 goamdsmi_status_t go_shim_esmi_core_energy_get(uint32_t thread_index, uint64_t* core_energy)
 {
-    *core_energy              = 0;
-    uint64_t core_energy_temp = 0;
+    *core_energy              = GOAMDSMI_UINT64_MAX;
+    uint64_t core_energy_temp = GOAMDSMI_UINT64_MAX;
 
     if(ESMI_SUCCESS == esmi_core_energy_get(thread_index, &core_energy_temp))
     {
@@ -115,8 +115,8 @@ goamdsmi_status_t go_shim_esmi_core_energy_get(uint32_t thread_index, uint64_t* 
 
 goamdsmi_status_t go_shim_esmi_socket_energy_get(uint32_t socket_index, uint64_t* socket_energy)
 {
-    *socket_energy              = 0;
-    uint64_t socket_energy_temp = 0;
+    *socket_energy              = GOAMDSMI_UINT64_MAX;
+    uint64_t socket_energy_temp = GOAMDSMI_UINT64_MAX;
 
     if(ESMI_SUCCESS == esmi_socket_energy_get(socket_index, &socket_energy_temp))
     {
@@ -130,8 +130,8 @@ goamdsmi_status_t go_shim_esmi_socket_energy_get(uint32_t socket_index, uint64_t
 
 goamdsmi_status_t go_shim_esmi_prochot_status_get(uint32_t socket_index, uint32_t* prochot)
 {
-    *prochot               = 0;
-    uint32_t prochot_temp  = 0;
+    *prochot               = GOAMDSMI_UINT32_MAX;
+    uint32_t prochot_temp  = GOAMDSMI_UINT32_MAX;
 
     if(ESMI_SUCCESS == esmi_prochot_status_get(socket_index, &prochot_temp))
     {
@@ -145,8 +145,8 @@ goamdsmi_status_t go_shim_esmi_prochot_status_get(uint32_t socket_index, uint32_
 
 goamdsmi_status_t go_shim_esmi_socket_power_get(uint32_t socket_index, uint32_t* socket_power)
 {
-    *socket_power              = 0;
-    uint32_t socket_power_temp = 0;
+    *socket_power              = GOAMDSMI_UINT32_MAX;
+    uint32_t socket_power_temp = GOAMDSMI_UINT32_MAX;
 
     if(ESMI_SUCCESS == esmi_socket_power_get(socket_index, &socket_power_temp))
     {
@@ -160,8 +160,8 @@ goamdsmi_status_t go_shim_esmi_socket_power_get(uint32_t socket_index, uint32_t*
 
 goamdsmi_status_t go_shim_esmi_socket_power_cap_get(uint32_t socket_index, uint32_t* socket_power_cap)
 {
-    *socket_power_cap              = 0;
-    uint32_t socket_power_cap_temp = 0;
+    *socket_power_cap              = GOAMDSMI_UINT32_MAX;
+    uint32_t socket_power_cap_temp = GOAMDSMI_UINT32_MAX;
 
     if(ESMI_SUCCESS == esmi_socket_power_cap_get(socket_index, &socket_power_cap_temp))
     {
@@ -175,8 +175,8 @@ goamdsmi_status_t go_shim_esmi_socket_power_cap_get(uint32_t socket_index, uint3
 
 goamdsmi_status_t go_shim_esmi_core_boostlimit_get(uint32_t thread_index, uint32_t* core_boostlimit)
 {
-    *core_boostlimit              = 0;
-    uint32_t core_boostlimit_temp = 0;
+    *core_boostlimit              = GOAMDSMI_UINT32_MAX;
+    uint32_t core_boostlimit_temp = GOAMDSMI_UINT32_MAX;
 
     if(ESMI_SUCCESS == esmi_core_boostlimit_get(thread_index, &core_boostlimit_temp))
     {

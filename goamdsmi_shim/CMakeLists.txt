@@ -34,14 +34,9 @@ cmake_minimum_required(VERSION 3.5.0)
 #      If not set, the default value is "OFF" for WITH_ESMI, "OFF" for WITH_ROCM_SMI and "ON" for WITH_AMDSMI.
 #      This cmake options builds required library APIs as per user need.
 #
-#      example #Below possible combinations.
-#	       #cmake -DWITH_ESMI=ON   -DWITH_ROCM_SMI=ON  -DWITH_AMDSMI=OFF ../amd_smi.cmake ../
-#	       #cmake -DWITH_ESMI=OFF  -DWITH_ROCM_SMI=ON  -DWITH_AMDSMI=OFF ../amd_smi.cmake ../
-#	       #cmake -DWITH_ESMI=ON   -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=OFF ../amd_smi.cmake ../
-#	       #cmake -DWITH_ESMI=OFF  -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON  ../amd_smi.cmake ../
-#	       #cmake -DWITH_ESMI=ON   -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON  ../amd_smi.cmake ../
-#	       #cmake -DWITH_ESMI=OFF  -DWITH_ROCM_SMI=ON  -DWITH_AMDSMI=ON  ../amd_smi.cmake ../
-#	       #cmake -DWITH_ESMI=ON   -DWITH_ROCM_SMI=ON  -DWITH_AMDSMI=ON  ../amd_smi.cmake ../
+#      example #user can try the below combinations.
+#	       #cmake -DWITH_ESMI=OFF -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON  ../amd_smi.cmake ../
+#	       #cmake -DWITH_ESMI=ON  -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=OFF ../amd_smi.cmake ../
 #
 #   Build Steps:
 #   1) #mkdir build
