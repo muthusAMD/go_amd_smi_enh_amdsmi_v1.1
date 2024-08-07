@@ -201,8 +201,8 @@ bool goamdsmi_gpu_init()
 
     if(amdsmigpu_init || rsmi_init)
     {
-        if (enable_debug_level(GOAMDSMI_DEBUG_LEVEL_1)) {printf("GOAMDSMI, Success, GpuInit:%s\n",gpu_init?"true":"false");}
         gpu_init = true;
+        if (enable_debug_level(GOAMDSMI_DEBUG_LEVEL_1)) {printf("GOAMDSMI, Success, GpuInit:%s\n",gpu_init?"true":"false");}
         return gpu_init;
     }
 
