@@ -42,10 +42,8 @@ cmake_minimum_required(VERSION 3.5.0)
 #   1) #mkdir build
 #   2) #cd build
 #   3) #cmake ../amd_smi.cmake ../
-#      The above command will pick default -DWITH_ESMI=OFF -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON
-#      (or)
 #      #cmake -C ../amd_smi.cmake ../
-#      The above '-C' option will pick default -DWITH_ESMI=ON -DWITH_ROCM_SMI=ON -DWITH_AMDSMI=ON
+#      The above command will pick default -DWITH_ESMI=OFF -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON
 #   4) #make
 #   5) #make install
 

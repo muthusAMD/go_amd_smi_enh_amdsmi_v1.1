@@ -92,15 +92,12 @@ The built library will appear in the `build` folder.
 
 ** NOTE: ** The below combinations useful for compilation as per user requirement:
 #### ```$ cmake ../amd_smi.cmake ../```
+#### ```$ cmake -C ../amd_smi.cmake ../```
 #### ```# The above command will pick default -DWITH_ESMI=OFF -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON```
 #### ```(or)```
-#### ```$ cmake -C ../amd_smi.cmake ../```
-#### ```# The '-C' option will pick default -DWITH_ESMI=OFF -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON```
-#### ```(or)```
-#### ```$ cmake -DWITH_ESMI=ON  -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=OFF ../amd_smi.cmake ../```
-#### ```$ cmake -DWITH_ESMI=OFF -DWITH_ROCM_SMI=ON  -DWITH_AMDSMI=OFF ../amd_smi.cmake ../```
 #### ```$ cmake -DWITH_ESMI=OFF -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=ON  ../amd_smi.cmake ../```
-#### ```The command useful if user needs to build as per the requirement```
+#### ```$ cmake -DWITH_ESMI=ON  -DWITH_ROCM_SMI=OFF -DWITH_AMDSMI=OFF ../amd_smi.cmake ../```
+#### ```The above command will be useful, if user needs to build as per their requirements``
 
 <a name="api"></a>
 # GO APIs exported by the GO SMI Binding
